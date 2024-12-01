@@ -18,3 +18,5 @@ Thumbs.db
 
 # Sensible Daten (falls du welche hast)
 *.env
+
+.class
