@@ -1,0 +1,20 @@
+# Gradle spezifisch
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Betriebssystem-spezifisch
+.DS_Store
+Thumbs.db
+
+# Log-Dateien
+*.log
+
+# Sensible Daten (falls du welche hast)
+*.env
