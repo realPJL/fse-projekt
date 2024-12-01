@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        scanner.nextLine(); // Consume the newline character
         while (true) {
             System.out.println("Wähle eine Option:");
             System.out.println("1: Alle Artikel anzeigen");
