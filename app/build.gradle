@@ -25,7 +25,7 @@ dependencies {
     implementation libs.guava
 
     // mongodb  
-    implementation 'org.mongodb:mongodb-driver-sync:5.2.1'
+    //implementation 'org.mongodb:mongodb-driver-sync:5.2.1'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
