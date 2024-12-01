@@ -16,6 +16,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'mysql:mysql-connector-java:8.0.31'
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
 

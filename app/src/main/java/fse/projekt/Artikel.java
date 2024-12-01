@@ -1,15 +1,14 @@
 package fse.projekt;
 
 public class Artikel {
+    private static int aktuelleID = 1; // Statische Variable zur ID-Verwaltung
     private int id;
     private String name;
     private int bestand;
     private double preis;
 
-    public Artikel(int id, String name, int bestand, double preis){
-        if(id <= 0){
-            throw new IllegalArgumentException("Die ID darf nicht kleiner oder gleich 0 sein.");
-        }
+    // Konstruktor, der die ID automatisch vergibt
+    public Artikel(String name, int bestand, double preis) {
         if(preis < 0){
             throw new IllegalArgumentException("Der Preis darf nicht kleiner oder gleich 0 sein.");
         }
@@ -20,7 +19,7 @@ public class Artikel {
             throw new IllegalArgumentException("Der Bestand kann nicht kleiner als 0 sein.");
         }
 
-        this.id = id;
+        this.id = aktuelleID++; // Automatische ID-Zuweisung
         this.name = name;
         this.bestand = bestand;
         this.preis = preis;
@@ -28,10 +27,6 @@ public class Artikel {
 
     public int getID(){
         return this.id;
-    }
-
-    public void setID(int id){
-        this.id = id;
     }
 
     public String getName(){

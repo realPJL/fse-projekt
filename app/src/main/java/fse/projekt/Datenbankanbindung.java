@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Datenbankanbindung {
-    private static final String url = "jdbc:mariadb://localhost:3306/inventarverwaltung";
+    private static final String url = "jdbc:mysql://localhost:3306/inventarverwaltung";
     private static final String nutzer = "PEN";
     private static final String passwort = "";
 
