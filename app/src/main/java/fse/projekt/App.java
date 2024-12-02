@@ -32,7 +32,7 @@ public class App {
                         // Alle Artikel anzeigen
                         List<Artikel> artikelListe = AService.alleArtikelAbrufen();
                         if (artikelListe.isEmpty()) {
-                            System.out.println("Keine Artikel gefunden.");
+                            System.out.println("404: Keine Artikel gefunden.");
                         } else {
                             artikelListe.forEach(artikel -> System.out.println(
                                     "ID: " + artikel.getID() +
@@ -54,7 +54,7 @@ public class App {
                                     ", Bestand: " + artikel.getBestand() +
                                     ", Preis: " + artikel.getPreis());
                         } else {
-                            System.out.println("Kein Artikel mit dieser ID gefunden.");
+                            System.out.println("404: Kein Artikel mit dieser ID gefunden.");
                         }
                     }
                     case 3 -> {
@@ -72,7 +72,7 @@ public class App {
 
                         Artikel neuerArtikel = new Artikel(name, bestand, preis);
                         AService.artikelHinzufuegen(neuerArtikel);
-                        System.out.println("Artikel erfolgreich hinzugefügt.");
+                        System.out.println("201: Artikel erfolgreich hinzugefügt.");
                     }
                     case 4 -> {
                         // Artikel aktualisieren
@@ -89,7 +89,7 @@ public class App {
                         double neuerPreis = Double.parseDouble(neuerPreisInput);
 
                         AService.artikelAktualisieren(id, neuerBestand, neuerPreis);
-                        System.out.println("Artikel erfolgreich aktualisiert.");
+                        System.out.println("200: Artikel erfolgreich aktualisiert.");
                     }
                     case 0 -> {
                         // Programm beenden
