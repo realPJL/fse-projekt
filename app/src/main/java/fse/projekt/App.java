@@ -70,8 +70,8 @@ public class App {
                         String preisInput = reader.readLine();
                         double preis = Double.parseDouble(preisInput);
 
-                        Artikel neuerArtikel = new Artikel(0, name, bestand, preis);
-                        AService.artikelHinzufügen(neuerArtikel);
+                        Artikel neuerArtikel = new Artikel(name, bestand, preis);
+                        AService.artikelHinzufuegen(neuerArtikel);
                         System.out.println("Artikel erfolgreich hinzugefügt.");
                     }
                     case 4 -> {

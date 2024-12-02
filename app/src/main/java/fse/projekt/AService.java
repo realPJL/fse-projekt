@@ -62,8 +62,27 @@ public class AService {
 
 
     // Hinzufügen eines neuen Artikels
-    public static void artikelHinzufügen(Artikel artikel) {
+   // public static void artikelHinzufügen(Artikel artikel) {
+    //    try (Connection conn = Datenbankanbindung.getConnection()) {
+     //       String query = "INSERT INTO Inventar (name, bestand, preis) VALUES (?, ?, ?)";
+       //     PreparedStatement stmt = conn.prepareStatement(query);
+         //   stmt.setString(1, artikel.getName());
+           // stmt.setInt(2, artikel.getBestand());
+           // stmt.setDouble(3, artikel.getPreis());
+
+            //stmt.executeUpdate();
+
+            //System.out.println("Artikel hinzugefügt: " + artikel.getName());
+
+        //} catch (SQLException e) {
+            //System.out.println("Fehler beim Hinzufügen des Artikels: " + e.getMessage());
+        //}
+    //}
+
+    // Hinzufügen eines neuen Artikels
+    public static void artikelHinzufuegen(Artikel artikel) {
         try (Connection conn = Datenbankanbindung.getConnection()) {
+            // ID wird nicht explizit gesetzt, da die Datenbank sie automatisch erstellt
             String query = "INSERT INTO Inventar (name, bestand, preis) VALUES (?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, artikel.getName());
@@ -71,7 +90,6 @@ public class AService {
             stmt.setDouble(3, artikel.getPreis());
 
             stmt.executeUpdate();
-
             System.out.println("Artikel hinzugefügt: " + artikel.getName());
 
         } catch (SQLException e) {
@@ -79,18 +97,19 @@ public class AService {
         }
     }
 
+    
+
 
     // Aktualisieren eines Artikels
     public static void artikelAktualisieren(int id, int neuerBestand, double neuerPreis) {
         try (Connection conn = Datenbankanbindung.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement(
-                    "UPDATE Inventar SET bestand = ?, preis = ? WHERE id = ?");
+            PreparedStatement stmt = conn.prepareStatement("UPDATE Inventar SET bestand = ?, preis = ? WHERE id = ?");
             stmt.setInt(1, neuerBestand);
             stmt.setDouble(2, neuerPreis);
             stmt.setInt(3, id);
 
-            int rowsUpdated = stmt.executeUpdate();
-            if (rowsUpdated == 0) {
+            int zeilenUpdated = stmt.executeUpdate();
+            if (zeilenUpdated == 0) {
                 throw new IllegalArgumentException("Artikel mit der ID " + id + " wurde nicht gefunden.");
             }
 
